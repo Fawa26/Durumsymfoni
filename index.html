@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dürüm Symfoni – Kebab, vegetar, vegan & salater på Nørrebro</title>
+<meta name="description" content="Dürüm Symfoni på Nørrebrogade 104, 2200 København N. Kebab, vegetar, vegan og salater. Bestil mad online og hent på ca. 15 minutter.">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Oswald:wght@600;700&family=Roboto+Condensed:wght@500;700&family=Roboto:wght@500&family=Noto+Serif:wght@700&display=swap">
+<style>
+/* Layout: neon-blå væg · glødende 3D-logo i midten · hvid pille-knap · infolinje under en tynd streg */
+:root{
+  /* ---- Farver (ret her) ---- */
+  --wall:#0b2fb4; --wall-light:#1a4be6; --wall-dark:#002a8f;
+  --white:#ffffff; --ink:#0a2a9c;
+  --neon-blue:#2a9bff; --neon-red:#ff2d3a; --neon-orange:#ff6a2a;
+  --glow:rgba(70,140,255,.85);
+  /* ---- Skrifttyper ---- */
+  --f-title:"Fredoka","Nunito","Arial Rounded MT Bold",system-ui,sans-serif;
+  --f-logo:"Oswald","Bebas Neue","Arial Narrow",sans-serif;
+  --f-ui:"Roboto Condensed","Arial Narrow",system-ui,sans-serif;
+  --f-serif:"Noto Serif",Georgia,serif;
+  --f-tag:"Roboto",system-ui,sans-serif;
+  /* ---- Link til bestilling ---- */
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{min-height:100%}
+body{
+  background:radial-gradient(ellipse 75% 70% at 50% 45%, rgba(0,18,90,0) 35%, rgba(0,18,90,.45) 75%, rgba(0,12,70,.8) 100%) fixed, var(--wall-dark) url("billeder/baggrund.jpg") center top/cover no-repeat;
+  color:var(--white); font-family:var(--f-ui);
+}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:3px solid var(--white);outline-offset:4px;border-radius:999px}
+.wrap{max-width:1880px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* ---------- Topbar ---------- */
+.top{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:clamp(16px,2.2vw,36px)}
+.logo{display:flex;align-items:center;gap:clamp(10px,1.2vw,20px)}
+.logo .ring{
+  width:clamp(46px,4.8vw,92px);aspect-ratio:1;border-radius:50%;background:#fff;display:grid;place-items:center;overflow:hidden;
+  box-shadow:0 0 0 2px rgba(255,255,255,.9),0 0 14px var(--glow),0 0 34px var(--glow);
+}
+.logo .ring svg{width:100%;height:auto;display:block}
+.logo .name{font-family:var(--f-logo);font-weight:700;font-size:clamp(22px,2.7vw,52px);letter-spacing:-.01em;line-height:1;
+  text-shadow:0 2px 0 #c9d6ff,0 0 14px var(--glow),0 0 32px var(--glow)}
+nav{display:flex;align-items:center;gap:clamp(20px,3vw,56px)}
+nav .lnk{font-family:var(--f-ui);font-weight:500;font-size:clamp(15px,1.15vw,22px);letter-spacing:.01em;padding-block:6px;border-bottom:3px solid transparent;
+  text-shadow:0 0 10px rgba(120,170,255,.6)}
+nav .lnk.on{border-color:var(--white);box-shadow:0 6px 12px -6px var(--glow)}
+nav .lnk:hover{border-color:rgba(255,255,255,.6)}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;text-align:center;line-height:1;background:var(--white);color:var(--ink);
+  font-family:var(--f-ui);font-weight:700;border-radius:999px;white-space:nowrap;
+  box-shadow:0 0 14px rgba(160,200,255,.9),0 0 40px rgba(70,140,255,.7),0 14px 28px rgba(0,10,60,.55);
+  transition:transform .18s, box-shadow .18s;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 0 20px rgba(180,215,255,1),0 0 60px rgba(70,140,255,.9),0 18px 32px rgba(0,10,60,.6)}
+.btn svg{width:1.1em;height:1.1em}
+.btn-sm{font-size:clamp(15px,1.25vw,24px);padding:.65em 1.4em}
+.btn-lg{font-size:clamp(20px,2.1vw,40px);padding:.6em 1.6em}
+
+/* ---------- Hero ---------- */
+.hero{text-align:center;padding-block:clamp(36px,5.2vw,104px) clamp(36px,4vw,76px);display:flex;flex-direction:column;align-items:center}
+.title-wrap{position:relative;display:inline-block;isolation:isolate}
+.title{
+  position:relative;z-index:2;margin:0;font-family:var(--f-title);font-weight:700;
+  font-size:clamp(34px,8.6vw,166px);line-height:1;letter-spacing:-.005em;color:var(--white);white-space:nowrap;
+  text-shadow:
+    0 1px 0 #e6ecff,0 2px 0 #c7d3ff,0 3px 0 #a9bbff,0 4px 0 #8aa2f5,0 5px 0 #6f8ae8,0 6px 0 #5673da,0 7px 0 #3f5ccb,
+    0 0 10px rgba(150,195,255,.9),0 0 28px rgba(60,130,255,.75),0 0 60px rgba(40,100,255,.45),
+    0 22px 30px rgba(0,8,60,.65);
+}
+/* Neon-streger bag titlen */
+.stroke{position:absolute;z-index:1;height:.1em;border-radius:999px;font-size:clamp(34px,8.6vw,166px);transform-origin:left center;pointer-events:none}
+.stroke.blue{left:-1.8%;top:100%;width:46%;transform:rotate(-11.3deg);
+  background:linear-gradient(90deg,#1f86ff,#36b0ff 60%,#1f86ff);
+  box-shadow:0 0 10px var(--neon-blue),0 0 26px var(--neon-blue),0 0 50px rgba(42,155,255,.7)}
+.stroke.red{left:44.5%;top:58%;width:60%;transform:rotate(-18deg);
+  background:linear-gradient(90deg,#ff2433,var(--neon-red) 40%,var(--neon-orange));
+  box-shadow:0 0 10px var(--neon-red),0 0 26px rgba(255,60,50,.9),0 0 54px rgba(255,80,40,.6)}
+.cats{
+  margin:clamp(14px,1.8vw,34px) 0 0;font-family:var(--f-serif);font-weight:700;
+  font-size:clamp(14px,2.55vw,50px);letter-spacing:.035em;white-space:nowrap;line-height:1.1;
+  text-shadow:0 2px 0 #b9c7ff,0 3px 0 #6f86de,0 0 16px rgba(120,170,255,.8),0 12px 18px rgba(0,8,60,.6);
+}
+.tag{margin:clamp(18px,2.2vw,42px) 0 0;font-family:var(--f-tag);font-weight:500;font-size:clamp(11px,1.2vw,23px);letter-spacing:.42em;padding-left:.42em;
+  text-shadow:0 0 10px rgba(140,185,255,.8)}
+.hero .btn-lg{margin-top:clamp(28px,3.6vw,70px)}
+
+/* ---------- Info ---------- */
+/* Info-kort (glas-look) */
+.info{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.4vw,24px);padding-block:clamp(8px,1vw,16px) clamp(32px,3.4vw,64px)}
+.card{position:relative;isolation:isolate;display:flex;align-items:center;gap:clamp(14px,1.3vw,22px);padding:clamp(16px,1.4vw,24px) clamp(18px,1.6vw,28px);
+  border-radius:28px;color:var(--white);
+  background:linear-gradient(145deg,rgba(255,255,255,.10) 0%,rgba(255,255,255,.03) 50%,rgba(255,255,255,.06) 100%),rgba(6,34,130,.62);
+  -webkit-backdrop-filter:blur(26px) saturate(185%) brightness(1.08);backdrop-filter:blur(26px) saturate(185%) brightness(1.08);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.35),
+    inset 0 -1px 0 rgba(255,255,255,.18),
+    inset 1px 0 0 rgba(255,255,255,.22),
+    inset 0 -14px 28px rgba(120,180,255,.10),
+    0 18px 40px rgba(0,10,60,.35),
+    0 2px 6px rgba(0,10,60,.2);
+  transition:transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s}
+/* glinsende kant (lys oppe til venstre og nede til højre) */
+.card::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.2px;z-index:-1;pointer-events:none;
+  background:linear-gradient(135deg,rgba(255,255,255,.45),rgba(255,255,255,.08) 35%,rgba(255,255,255,.03) 60%,rgba(255,255,255,.25));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+/* blankt lysskær i toppen */
+.card::after{content:"";position:absolute;inset:0;border-radius:inherit;z-index:-1;pointer-events:none;
+  background:radial-gradient(120% 70% at 30% -10%,rgba(255,255,255,.12),rgba(255,255,255,0) 55%)}
+a.card:hover,.card.hours:hover{transform:translateY(-3px) scale(1.01)}
+.card .ic{width:clamp(44px,3.4vw,58px);aspect-ratio:1;border-radius:50%;flex:none;display:grid;place-items:center;
+  background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.45),rgba(255,255,255,.12) 60%,rgba(255,255,255,.06));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7),inset 0 -2px 6px rgba(0,30,120,.25),0 6px 16px rgba(0,10,60,.3),0 0 18px rgba(90,160,255,.35)}
+.card .ic svg{width:50%;height:auto}
+.card .txt{display:flex;flex-direction:column;gap:2px;min-width:0}
+.card .lbl{font-family:var(--f-tag);font-size:clamp(11px,.75vw,14px);letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+.card .val{font-family:var(--f-ui);font-weight:700;font-size:clamp(17px,1.3vw,24px);line-height:1.25}
+.card .sub{font-family:var(--f-ui);font-size:clamp(14px,.95vw,17px);opacity:.85;display:flex;align-items:center;gap:8px}
+.card.hours{position:relative;cursor:pointer}
+.ic-btn{border:0;color:inherit;cursor:pointer;font:inherit;transition:background .18s,transform .18s}
+.ic-btn:hover{background:rgba(255,255,255,.24);transform:scale(1.05)}
+.ic-btn:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.more{font-family:var(--f-ui);font-size:clamp(12px,.8vw,14px);opacity:.7;text-decoration:underline;text-underline-offset:3px;margin-top:2px}
+.week{position:absolute;left:0;right:0;bottom:calc(100% + 10px);z-index:20;padding:14px 18px;border-radius:18px;
+  background:rgba(4,30,120,.97);border:1px solid rgba(255,255,255,.22);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
+  box-shadow:0 18px 40px rgba(0,8,50,.55)}
+.week ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.week li{display:flex;justify-content:space-between;gap:16px;padding:7px 10px;border-radius:10px;font-family:var(--f-ui);font-size:clamp(15px,1vw,18px);font-variant-numeric:tabular-nums}
+.week li.today{background:rgba(255,255,255,.14);font-weight:700}
+.week li .dg{text-transform:capitalize}
+.call-wrap{position:relative}
+nav .call{display:inline-flex;align-items:center;gap:.5em;background:none;border:0;border-bottom:3px solid transparent;color:inherit;cursor:pointer;font:inherit;font-family:var(--f-ui);font-weight:500;font-size:clamp(15px,1.15vw,22px)}
+nav .call svg{width:1em;height:1em}
+.call-pop{position:absolute;right:0;top:calc(100% + 14px);z-index:30;min-width:320px;padding:18px 20px;border-radius:18px;display:flex;flex-direction:column;gap:6px;
+  background:rgba(4,30,120,.97);border:1px solid rgba(255,255,255,.22);box-shadow:0 18px 40px rgba(0,8,50,.55);text-align:left}
+.call-pop .lbl{font-family:var(--f-tag);font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+.call-pop .num{font-family:var(--f-ui);font-weight:700;font-size:28px;letter-spacing:.02em;font-variant-numeric:tabular-nums;user-select:all;white-space:nowrap}
+.call-actions{display:flex;gap:10px;margin-top:8px;flex-wrap:wrap}
+.call-now{font-size:16px;padding:.7em 1.3em}
+.copy{font:inherit;font-family:var(--f-ui);font-size:15px;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:.6em 1.1em;cursor:pointer}
+.copy:hover{background:rgba(255,255,255,.2)}
+.dot{width:8px;height:8px;border-radius:50%;background:#3ee07a;box-shadow:0 0 0 3px rgba(62,224,122,.25),0 0 10px #3ee07a}
+.dot.closed{background:#ff5a5f;box-shadow:0 0 0 3px rgba(255,90,95,.25),0 0 10px #ff5a5f}
+
+@media (max-width:900px){
+  nav .lnk{display:none}
+  nav .call{display:inline-flex}
+  nav .call span{display:none}
+  nav .call svg{width:22px;height:22px}
+  .info{grid-template-columns:1fr}
+}
+@media (max-width:520px){ .tag{letter-spacing:.22em;padding-left:.22em} .hero{padding-block:56px 40px} .top .btn-sm{font-size:13px;padding:.7em 1em} .logo .name{font-size:15px;white-space:nowrap} .logo .ring{width:38px} .top{gap:8px} nav{gap:12px} .top .btn-sm{font-size:12px;padding:.75em .9em}
+  .call-pop{position:fixed;left:16px;right:16px;top:72px;min-width:0} }
+@media (prefers-reduced-motion:reduce){.btn{transition:none}}
+.logo-img{display:block;width:min(1140px,57vw);height:auto;margin-inline:auto}
+.tag{margin-top:clamp(14px,1.6vw,30px)!important}
+@media (max-width:900px){.logo-img{width:96%}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</head>
+<body>
+<header class="wrap top">
+  <a class="logo" href="#forside" aria-label="Durum Symfoni forside">
+    <span class="ring"><svg viewBox="0 0 100 100" aria-hidden="true"><g id="ds-g" transform="translate(50 50) skewX(-12)"><text id="ds-t" x="0" y="0" text-anchor="middle" font-family="Oswald, 'Arial Narrow', sans-serif" font-weight="700" font-size="58" letter-spacing="-2" fill="#1238c9">DS</text></g></svg></span><span class="name">DURUM SYMFONI</span>
+  </a>
+  <nav>
+    <a class="lnk on" href="#forside">FORSIDE</a>
+    <a class="lnk" href="https://durumsymfoni.dk/takeaway?scroll-to-menu=true" target="_blank" rel="noopener">MENU</a>
+    <div class="call-wrap">
+      <button class="lnk call" id="call-btn" type="button" aria-expanded="false" aria-controls="call-pop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span>RING OG BESTIL</span></button>
+      <div class="call-pop" id="call-pop" hidden>
+        <span class="lbl">Ring og bestil</span>
+        <span class="num" id="call-num">+45 61 10 23 37</span>
+        <div class="call-actions">
+          <a class="btn call-now" href="tel:+4561102337">Ring nu</a>
+          <button class="copy" id="call-copy" type="button">Kopiér nummer</button>
+        </div>
+      </div>
+    </div>
+    <a class="btn btn-sm" href="https://durumsymfoni.dk/takeaway?scroll-to-menu=true" target="_blank" rel="noopener">Bestil mad online</a>
+  </nav>
+</header>
+
+<main id="forside">
+  <section class="wrap hero">
+    <h1 class="sr">Dürüm Symfoni – kebab, vegetar, vegan, salater</h1>
+    <img class="logo-img" src="billeder/logo-neon.png" alt="Dürüm Symfoni – Kebab, vegetar, vegan, salater">
+    <p class="tag">FRISKE RÅVARER. GOD SMAG. ALTID.</p>
+    <a class="btn btn-lg" href="https://durumsymfoni.dk/takeaway?scroll-to-menu=true" target="_blank" rel="noopener">Bestil mad online</a>
+  </section>
+
+  <section class="wrap info" id="info">
+    <a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=N%C3%B8rrebrogade+104,+2200+K%C3%B8benhavn+N" target="_blank" rel="noopener">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.4 7-12.2A7 7 0 0 0 5 9.8C5 15.6 12 22 12 22z"/><circle cx="12" cy="9.8" r="2.6"/></svg></span>
+      <span class="txt"><span class="lbl">Find os</span><span class="val">Nørrebrogade 104</span><span class="sub">2200 København N</span></span>
+    </a>
+    <div class="card hours" id="h-card">
+      <button class="ic ic-btn" id="h-btn" type="button" aria-expanded="false" aria-controls="h-week" title="Se åbningstider for hele ugen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 6.5V12l3.5 2.5"/></svg></button>
+      <span class="txt"><span class="lbl" id="h-lbl">Åbningstider i dag</span><span class="val" id="h-val">11:00 – 22:00</span><span class="sub"><span class="dot" id="h-dot"></span><span id="h-status">Åben nu</span></span><span class="more" id="h-more">Se hele ugen</span></span>
+      <div class="week" id="h-week" hidden><ul id="h-list"></ul></div>
+    </div>
+    <div class="card">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16l-1.2 12.5H5.2z"/><path d="M8.5 10V6.5a3.5 3.5 0 0 1 7 0V10"/></svg></span>
+      <span class="txt"><span class="lbl">Afhentning</span><span class="val">Klar på ca. 15 min</span><span class="sub">Bestil online og hent selv</span></span>
+    </div>
+  </section>
+</main>
+<script>
+(function(){
+  var b=document.getElementById("call-btn"),p=document.getElementById("call-pop"),c=document.getElementById("call-copy");
+  if(!b) return;
+  function t(e){ if(e) e.stopPropagation(); p.hidden=!p.hidden; b.setAttribute("aria-expanded",!p.hidden); }
+  b.addEventListener("click",t);
+  p.addEventListener("click",function(e){e.stopPropagation()});
+  document.addEventListener("click",function(){ if(!p.hidden) t(); });
+  document.addEventListener("keydown",function(e){ if(e.key==="Escape"&&!p.hidden) t(); });
+  c.addEventListener("click",function(){
+    var n=document.getElementById("call-num").textContent;
+    function ok(){ c.textContent="Kopieret"; setTimeout(function(){c.textContent="Kopiér nummer"},1800); }
+    try{ navigator.clipboard.writeText(n).then(ok,function(){ sel(); }); }catch(e){ sel(); }
+    function sel(){ var r=document.createRange(); r.selectNodeContents(document.getElementById("call-num")); var s=getSelection(); s.removeAllRanges(); s.addRange(r); }
+  });
+})();
+</script>
+<script>
+/* ÅBNINGSTIDER – ret her. Format "HH:MM". Lukketid efter midnat (fx 04:00) virker også. */
+var AABNINGSTIDER = {
+  mandag:  ["11:00","22:00"],
+  tirsdag: ["11:00","22:00"],
+  onsdag:  ["11:00","22:00"],
+  torsdag: ["11:00","22:00"],
+  fredag:  ["11:00","05:00"],
+  lørdag:  ["11:00","05:00"],
+  søndag:  ["11:00","22:00"]
+};
+(function(){
+  var DAGE=["søndag","mandag","tirsdag","onsdag","torsdag","fredag","lørdag"];
+  function nuKbh(){
+    var p=new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Copenhagen",weekday:"short",hour:"2-digit",minute:"2-digit",hour12:false}).formatToParts(new Date());
+    var o={};p.forEach(function(x){o[x.type]=x.value});
+    var wd=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(o.weekday);
+    return {dag:wd,min:(parseInt(o.hour,10)%24)*60+parseInt(o.minute,10)};
+  }
+  function m(t){var a=t.split(":");return a[0]*60+ +a[1]}
+  function aaben(d,min){
+    var t=AABNINGSTIDER[DAGE[d]]; if(!t) return false;
+    var a=m(t[0]),l=m(t[1]); if(l<=a) l+=1440; return min>=a&&min<l;
+  }
+  function opdater(){
+    var n=nuKbh(), i=n.dag, t=AABNINGSTIDER[DAGE[i]];
+    // efter midnat: vis gårsdagens åbningstid, hvis den stadig er åben
+    var gaar=(i+6)%7;
+    if(!aaben(i,n.min)&&aaben(gaar,n.min+1440)){ t=AABNINGSTIDER[DAGE[gaar]]; }
+    var open=aaben(i,n.min)||aaben(gaar,n.min+1440);
+    var v=document.getElementById("h-val"),s=document.getElementById("h-status"),d=document.getElementById("h-dot");
+    if(!v) return;
+    v.textContent=t?t[0]+" – "+t[1]:"Lukket i dag";
+    s.textContent=open?"Åben nu":"Lukket nu";
+    d.className="dot"+(open?"":" closed");
+  }
+  opdater(); setInterval(opdater,60000);
+  // Hele ugen – vis/skjul ved klik på uret eller kortet
+  var REK=["mandag","tirsdag","onsdag","torsdag","fredag","lørdag","søndag"];
+  var card=document.getElementById("h-card"),btn=document.getElementById("h-btn"),wk=document.getElementById("h-week"),list=document.getElementById("h-list"),more=document.getElementById("h-more");
+  function bygListe(){
+    var idag=DAGE[nuKbh().dag];
+    list.innerHTML=REK.map(function(dg){var t=AABNINGSTIDER[dg];
+      return '<li'+(dg===idag?' class="today"':'')+'><span><span class="dg">'+dg+'</span>'+(dg===idag?' (i dag)':'')+'</span><span>'+(t?t[0]+' – '+t[1]:'Lukket')+'</span></li>';}).join("");
+  }
+  function toggle(e){ if(e) e.stopPropagation(); var open=wk.hidden; if(open) bygListe(); wk.hidden=!open; btn.setAttribute("aria-expanded",open); more.textContent=open?"Skjul ugen":"Se hele ugen"; }
+  if(card){ btn.addEventListener("click",toggle); card.addEventListener("click",function(e){ if(!wk.contains(e.target)) toggle(e); });
+    document.addEventListener("click",function(e){ if(!card.contains(e.target)&&!wk.hidden) toggle(); });
+    document.addEventListener("keydown",function(e){ if(e.key==="Escape"&&!wk.hidden) toggle(); }); }
+})();
+</script>
+<script>
+(function(){
+  function center(){
+    var t=document.getElementById('ds-t'); if(!t) return;
+    var fam=getComputedStyle(t).fontFamily||'Oswald';
+    var c=document.createElement('canvas').getContext('2d');
+    c.font='700 58px '+fam;
+    if('letterSpacing' in c) c.letterSpacing='-2px';
+    var m=c.measureText('DS');
+    t.setAttribute('text-anchor','start');
+    // midten af selve bogstaverne (ikke skriftens linjehøjde) i cirklens midte
+    t.setAttribute('x', -(m.actualBoundingBoxRight - m.actualBoundingBoxLeft)/2 + m.actualBoundingBoxLeft);
+    t.setAttribute('y', (m.actualBoundingBoxAscent - m.actualBoundingBoxDescent)/2);
+  }
+  center();
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(center);
+  window.addEventListener('load',center);
+})();
+</script>
+
+</body>
+</html>
