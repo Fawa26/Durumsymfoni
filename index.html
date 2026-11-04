@@ -161,6 +161,28 @@ nav .call svg{width:1em;height:1em}
 .tag{margin-top:clamp(14px,1.6vw,30px)!important}
 @media (max-width:900px){.logo-img{width:96%}}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Desktop: hele forsiden inkl. de tre bokse skal kunne ses uden at scrolle */
+@media (min-width:901px){
+  body{display:flex;flex-direction:column;min-height:100vh;min-height:100svh}
+  .wrap{width:100%}
+  main{flex:1;display:flex;flex-direction:column}
+  .top{padding-block:clamp(10px,2.4vh,34px)}
+  .logo .ring{width:clamp(38px,min(4.8vw,8vh),92px)}
+  .logo .name{font-size:clamp(20px,min(2.7vw,4.6vh),52px)}
+  nav .lnk,nav .call{font-size:clamp(14px,min(1.15vw,2.1vh),22px)}
+  .btn-sm{font-size:clamp(14px,min(1.25vw,2.3vh),24px)}
+  .hero{flex:1;justify-content:center;padding-block:clamp(8px,2vh,40px) clamp(12px,3vh,56px)}
+  .logo-img{width:min(1140px,57vw,80vh)}
+  .tag{margin-top:clamp(8px,2.2vh,30px)!important;font-size:clamp(11px,min(1.2vw,2.1vh),23px)}
+  .hero .btn-lg{margin-top:clamp(14px,3.8vh,70px);font-size:clamp(17px,min(2.1vw,3.7vh),40px)}
+  .info{padding-block:0 clamp(14px,3.2vh,56px)}
+  .card{padding:clamp(10px,1.9vh,24px) clamp(16px,1.6vw,28px)}
+  .card .ic{width:clamp(34px,min(3.4vw,6.2vh),58px)}
+  .card .val{font-size:clamp(15px,min(1.3vw,2.4vh),24px)}
+  .card .sub,.more{font-size:clamp(12px,min(.95vw,1.8vh),17px)}
+  .card .lbl{font-size:clamp(10px,min(.75vw,1.4vh),14px)}
+}
 </style>
 </head>
 <body>
