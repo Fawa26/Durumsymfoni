@@ -13,7 +13,7 @@
 /* Layout: neon-blå væg · glødende 3D-logo i midten · hvid pille-knap · infolinje under en tynd streg */
 :root{
   /* ---- Farver (ret her) ---- */
-  --wall:#0b2fb4; --wall-light:#1a4be6; --wall-dark:#002a8f;
+  --wall:#0b2fb4; --wall-light:#1a4be6; --wall-dark:#005cb6;
   --white:#ffffff; --ink:#0a2a9c;
   --neon-blue:#2a9bff; --neon-red:#ff2d3a; --neon-orange:#ff6a2a;
   --glow:rgba(70,140,255,.85);
@@ -29,7 +29,7 @@
 *{box-sizing:border-box}
 html,body{min-height:100%}
 body{
-  background:radial-gradient(ellipse 75% 70% at 50% 45%, rgba(0,18,90,0) 35%, rgba(0,18,90,.45) 75%, rgba(0,12,70,.8) 100%) fixed, var(--wall-dark) url("billeder/baggrund.jpg") center top/cover no-repeat;
+  background:var(--wall-dark);
   color:var(--white); font-family:var(--f-ui);
 }
 a{color:inherit;text-decoration:none}
@@ -183,6 +183,20 @@ nav .call svg{width:1em;height:1em}
   .card .sub,.more{font-size:clamp(12px,min(.95vw,1.8vh),17px)}
   .card .lbl{font-size:clamp(10px,min(.75vw,1.4vh),14px)}
 }
+
+/* Titel i midten – rigtig tekst med lille skygge (ingen LED-glød) */
+.brand{--fs:clamp(38px,11.2vw,80px);display:flex;flex-direction:column;align-items:center;margin-inline:auto}
+.brand-title-wrap{position:relative;display:inline-block;isolation:isolate;font-size:var(--fs);padding-top:.5em}
+.brand-title{position:relative;z-index:2;margin:0;font-family:var(--f-title);font-weight:600;font-size:1em;line-height:1;white-space:nowrap;color:#fff;letter-spacing:.005em;
+  text-shadow:0 .025em 0 rgba(0,20,90,.35),0 .045em .07em rgba(0,15,70,.35)}
+.brand-stroke{position:absolute;z-index:1;height:var(--t);border-radius:999px;transform-origin:0 50%;margin-top:calc(var(--t) / -2);pointer-events:none;
+  box-shadow:0 .03em .05em rgba(0,15,70,.3)}
+.brand-stroke.blue{--t:.075em;left:.05em;top:1.952em;width:3.94em;transform:rotate(-13.63deg);background:#5ec2ff;opacity:.6;box-shadow:none}
+.brand-stroke.red{--t:.1em;left:3.84em;top:1.033em;width:4.02em;transform:rotate(-13.63deg);background:#ff3434}
+.brand-cats{position:relative;z-index:2;margin:.42em 0 0;font-family:var(--f-serif);font-weight:700;font-size:calc(var(--fs)*.315);letter-spacing:.04em;line-height:1.1;white-space:nowrap;color:#fff;
+  text-shadow:0 .04em 0 rgba(0,20,90,.35),0 .07em .1em rgba(0,15,70,.35)}
+@media (min-width:901px){ .brand{--fs:min(165px,8.4vw,13.6vh)} .tag{margin-top:clamp(10px,3vh,40px)!important} }
+.call-pop[hidden],.week[hidden]{display:none!important}
 </style>
 </head>
 <body>
@@ -210,8 +224,14 @@ nav .call svg{width:1em;height:1em}
 
 <main id="forside">
   <section class="wrap hero">
-    <h1 class="sr">Dürüm Symfoni – kebab, vegetar, vegan, salater</h1>
-    <img class="logo-img" src="billeder/logo-neon.png" alt="Dürüm Symfoni – Kebab, vegetar, vegan, salater">
+    <div class="brand">
+      <div class="brand-title-wrap">
+        <span class="brand-stroke blue" aria-hidden="true"></span>
+        <span class="brand-stroke red" aria-hidden="true"></span>
+        <h1 class="brand-title">Dürüm Symfoni</h1>
+      </div>
+      <p class="brand-cats">KEBAB - VEGETAR - VEGAN - SALATER</p>
+    </div>
     <p class="tag">FRISKE RÅVARER. GOD SMAG. ALTID.</p>
     <a class="btn btn-lg" href="https://durumsymfoni.dk/takeaway?scroll-to-menu=true" target="_blank" rel="noopener">Bestil mad online</a>
   </section>

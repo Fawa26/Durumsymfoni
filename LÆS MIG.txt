@@ -1,11 +1,10 @@
 Dürüm Symfoni – forside
 
 Indhold:
-- index.html  (selve forsiden)
-- billeder/baggrund.jpg  (blå baggrund)
-- billeder/logo-neon.png  (neon-logoet)
+- index.html  (hele forsiden – der bruges ingen billeder)
+- robots.txt
 
-Upload hele mappen til webhotellet, så index.html og mappen "billeder" ligger samme sted.
+Upload filerne til roden af dit GitHub-repository / webhotel.
 Siden henter skrifttyper fra Google Fonts, så den skal være online for at se helt rigtig ud.
 
 Ret åbningstider: søg efter "AABNINGSTIDER" i index.html.
@@ -13,5 +12,5 @@ Ret telefonnummer: søg efter "+45 61 10 23 37" og "tel:+4561102337".
 Bestil-link: https://durumsymfoni.dk/takeaway?scroll-to-menu=true
 
 Skjult for Google:
-Siden har et "noindex"-tag, så Google og andre søgemaskiner ikke viser den i søgeresultater.
-Når siden skal gå live for alvor, så slet de to linjer med name="robots" og name="googlebot" øverst i index.html, og slet robots.txt.
+Siden har et "noindex"-tag. Når siden skal gå live for alvor, så slet de to linjer med
+name="robots" og name="googlebot" øverst i index.html, og slet robots.txt.
