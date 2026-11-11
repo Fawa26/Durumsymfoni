@@ -201,15 +201,11 @@ nav .call svg{width:1em;height:1em}
 @media (min-width:901px){ .brand{--fs:min(165px,8.4vw,13.6vh)} .tag{margin-top:clamp(10px,3vh,40px)!important} }
 .call-pop[hidden],.week[hidden]{display:none!important}
 
-/* Ugens åbningstider åbner OVER kortet – og der laves plads, så de ikke dækker teksten */
-.info{transition:padding-top .25s ease}
-.card.hours{transition:margin-top .25s ease}
-body.week-open .info{padding-top:var(--wk-h,0px)}
-@media (max-width:900px){
-  body.week-open .info{padding-top:0}
-  body.week-open .card.hours{margin-top:var(--wk-h,0px)}
-}
-@media (prefers-reduced-motion:reduce){.info,.card.hours{transition:none}}
+/* Ugens åbningstider: lodret boks der ruller op over kortet og ligger ØVERST (teksten bag den kan ikke ses igennem) */
+.card.hours{position:relative;z-index:40}
+.week{background:#0a2a8a;-webkit-backdrop-filter:none;backdrop-filter:none;z-index:40;animation:wkUp .25s cubic-bezier(.2,.8,.2,1)}
+@keyframes wkUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.week{animation:none}}
 </style>
 </head>
 <body>
@@ -327,9 +323,9 @@ var AABNINGSTIDER = {
     list.innerHTML=REK.map(function(dg){var t=AABNINGSTIDER[dg];
       return '<li'+(dg===idag?' class="today"':'')+'><span><span class="dg">'+dg+'</span>'+(dg===idag?' (i dag)':'')+'</span><span>'+(t?t[0]+' – '+t[1]:'Lukket')+'</span></li>';}).join("");
   }
-  function toggle(e){ if(e) e.stopPropagation(); var open=wk.hidden; if(open) bygListe(); wk.hidden=!open; btn.setAttribute("aria-expanded",open); more.textContent=open?"Skjul ugen":"Se hele ugen"; var info=document.querySelector(".info"); if(open){ info.style.setProperty("--wk-h",(wk.offsetHeight+14)+"px"); } document.body.classList.toggle("week-open",open); if(open){ setTimeout(function(){ try{ card.scrollIntoView({behavior:"smooth",block:"end"}); }catch(e){} },280); } }
+  function toggle(e){ if(e) e.stopPropagation(); var open=wk.hidden; if(open) bygListe(); wk.hidden=!open; btn.setAttribute("aria-expanded",open); more.textContent=open?"Skjul ugen":"Se hele ugen"; }
   if(card){ btn.addEventListener("click",toggle); card.addEventListener("click",function(e){ if(!wk.contains(e.target)) toggle(e); });
-    document.addEventListener("click",function(e){ if(!card.contains(e.target)&&!wk.hidden) toggle(); });
+    document.addEventListener("click",function(e){ if(!card.contains(e.target)&&!wk.contains(e.target)&&!wk.hidden) toggle(); });
     document.addEventListener("keydown",function(e){ if(e.key==="Escape"&&!wk.hidden) toggle(); }); }
 })();
 </script>
