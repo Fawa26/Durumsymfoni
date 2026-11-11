@@ -6,13 +6,8 @@
 <meta name="robots" content="noindex">
 <title>Dürüm Symfoni</title>
 <script>
-  // Gamle adresser fra den tidligere hjemmeside (fx /takeaway, /menu, /order)
-  // sendes videre til bestillingssiden. Alt andet sendes til forsiden.
-  (function(){
-    var p = location.pathname.toLowerCase();
-    var bestil = /takeaway|menu|order|bestil|checkout|kurv|cart|product|produkt|category|kategori/.test(p);
-    location.replace(bestil ? "https://durumsymfoni.orderyoyo.dk/" : "/" + location.search);
-  })();
+  // Alle gamle eller ukendte adresser (fx /takeaway) sendes til forsiden.
+  location.replace("/" + location.search);
 </script>
 <style>
   body{margin:0;min-height:100vh;display:grid;place-items:center;background:#005cb6;color:#fff;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;text-align:center;padding:24px}
