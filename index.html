@@ -124,13 +124,13 @@ a.card:hover,.card.hours:hover{transform:translateY(-3px) scale(1.01)}
 .card .lbl{font-family:var(--f-tag);font-size:clamp(11px,.75vw,14px);letter-spacing:.14em;text-transform:uppercase;opacity:.75}
 .card .val{font-family:var(--f-ui);font-weight:700;font-size:clamp(17px,1.3vw,24px);line-height:1.25}
 .card .sub{font-family:var(--f-ui);font-size:clamp(14px,.95vw,17px);opacity:.85;display:flex;align-items:center;gap:8px}
-.card.hours{position:relative;cursor:pointer}
+.card.hours{position:relative;cursor:pointer;z-index:20}
 .ic-btn{border:0;color:inherit;cursor:pointer;font:inherit;transition:background .18s,transform .18s}
 .ic-btn:hover{background:rgba(255,255,255,.24);transform:scale(1.05)}
 .ic-btn:focus-visible{outline:2px solid #fff;outline-offset:3px}
 .more{font-family:var(--f-ui);font-size:clamp(12px,.8vw,14px);opacity:.7;text-decoration:underline;text-underline-offset:3px;margin-top:2px}
 .week{position:absolute;left:0;right:0;bottom:calc(100% + 10px);z-index:20;padding:14px 18px;border-radius:18px;
-  background:rgba(4,30,120,.97);border:1px solid rgba(255,255,255,.22);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
+  background:#0a2a8a;border:1px solid rgba(255,255,255,.22);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
   box-shadow:0 18px 40px rgba(0,8,50,.55)}
 .week ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
 .week li{display:flex;justify-content:space-between;gap:16px;padding:7px 10px;border-radius:10px;font-family:var(--f-ui);font-size:clamp(15px,1vw,18px);font-variant-numeric:tabular-nums}
@@ -140,7 +140,7 @@ a.card:hover,.card.hours:hover{transform:translateY(-3px) scale(1.01)}
 nav .call{display:inline-flex;align-items:center;gap:.5em;background:none;border:0;border-bottom:3px solid transparent;color:inherit;cursor:pointer;font:inherit;font-family:var(--f-ui);font-weight:500;font-size:clamp(15px,1.15vw,22px)}
 nav .call svg{width:1em;height:1em}
 .call-pop{position:absolute;right:0;top:calc(100% + 14px);z-index:30;min-width:320px;padding:18px 20px;border-radius:18px;display:flex;flex-direction:column;gap:6px;
-  background:rgba(4,30,120,.97);border:1px solid rgba(255,255,255,.22);box-shadow:0 18px 40px rgba(0,8,50,.55);text-align:left}
+  background:#0a2a8a;border:1px solid rgba(255,255,255,.22);box-shadow:0 18px 40px rgba(0,8,50,.55);text-align:left}
 .call-pop .lbl{font-family:var(--f-tag);font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
 .call-pop .num{font-family:var(--f-ui);font-weight:700;font-size:28px;letter-spacing:.02em;font-variant-numeric:tabular-nums;user-select:all;white-space:nowrap}
 .call-actions{display:flex;gap:10px;margin-top:8px;flex-wrap:wrap}
@@ -200,6 +200,12 @@ nav .call svg{width:1em;height:1em}
   text-shadow:0 .04em 0 rgba(0,20,90,.35),0 .07em .1em rgba(0,15,70,.35)}
 @media (min-width:901px){ .brand{--fs:min(165px,8.4vw,13.6vh)} .tag{margin-top:clamp(10px,3vh,40px)!important} }
 .call-pop[hidden],.week[hidden]{display:none!important}
+
+/* Ugens åbningstider foldes ud INDE i kortet (dækker ikke teksten) */
+.info{align-items:start}
+.card.hours{flex-wrap:wrap}
+.week{position:static;flex-basis:100%;margin-top:4px;padding:10px 0 0;background:none;border:0;border-top:1px solid rgba(255,255,255,.18);border-radius:0;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none}
+.week li{padding:6px 8px;font-size:clamp(14px,.95vw,17px)}
 </style>
 </head>
 <body>
@@ -317,7 +323,7 @@ var AABNINGSTIDER = {
     list.innerHTML=REK.map(function(dg){var t=AABNINGSTIDER[dg];
       return '<li'+(dg===idag?' class="today"':'')+'><span><span class="dg">'+dg+'</span>'+(dg===idag?' (i dag)':'')+'</span><span>'+(t?t[0]+' – '+t[1]:'Lukket')+'</span></li>';}).join("");
   }
-  function toggle(e){ if(e) e.stopPropagation(); var open=wk.hidden; if(open) bygListe(); wk.hidden=!open; btn.setAttribute("aria-expanded",open); more.textContent=open?"Skjul ugen":"Se hele ugen"; }
+  function toggle(e){ if(e) e.stopPropagation(); var open=wk.hidden; if(open) bygListe(); wk.hidden=!open; btn.setAttribute("aria-expanded",open); more.textContent=open?"Skjul ugen":"Se hele ugen"; if(open){ setTimeout(function(){ try{ wk.scrollIntoView({behavior:"smooth",block:"nearest"}); }catch(e){} },30); } }
   if(card){ btn.addEventListener("click",toggle); card.addEventListener("click",function(e){ if(!wk.contains(e.target)) toggle(e); });
     document.addEventListener("click",function(e){ if(!card.contains(e.target)&&!wk.hidden) toggle(); });
     document.addEventListener("keydown",function(e){ if(e.key==="Escape"&&!wk.hidden) toggle(); }); }
