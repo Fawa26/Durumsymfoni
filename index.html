@@ -201,11 +201,15 @@ nav .call svg{width:1em;height:1em}
 @media (min-width:901px){ .brand{--fs:min(165px,8.4vw,13.6vh)} .tag{margin-top:clamp(10px,3vh,40px)!important} }
 .call-pop[hidden],.week[hidden]{display:none!important}
 
-/* Ugens åbningstider foldes ud INDE i kortet (dækker ikke teksten) */
-.info{align-items:start}
-.card.hours{flex-wrap:wrap}
-.week{position:static;flex-basis:100%;margin-top:4px;padding:10px 0 0;background:none;border:0;border-top:1px solid rgba(255,255,255,.18);border-radius:0;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none}
-.week li{padding:6px 8px;font-size:clamp(14px,.95vw,17px)}
+/* Ugens åbningstider åbner OVER kortet – og der laves plads, så de ikke dækker teksten */
+.info{transition:padding-top .25s ease}
+.card.hours{transition:margin-top .25s ease}
+body.week-open .info{padding-top:var(--wk-h,0px)}
+@media (max-width:900px){
+  body.week-open .info{padding-top:0}
+  body.week-open .card.hours{margin-top:var(--wk-h,0px)}
+}
+@media (prefers-reduced-motion:reduce){.info,.card.hours{transition:none}}
 </style>
 </head>
 <body>
@@ -323,7 +327,7 @@ var AABNINGSTIDER = {
     list.innerHTML=REK.map(function(dg){var t=AABNINGSTIDER[dg];
       return '<li'+(dg===idag?' class="today"':'')+'><span><span class="dg">'+dg+'</span>'+(dg===idag?' (i dag)':'')+'</span><span>'+(t?t[0]+' – '+t[1]:'Lukket')+'</span></li>';}).join("");
   }
-  function toggle(e){ if(e) e.stopPropagation(); var open=wk.hidden; if(open) bygListe(); wk.hidden=!open; btn.setAttribute("aria-expanded",open); more.textContent=open?"Skjul ugen":"Se hele ugen"; if(open){ setTimeout(function(){ try{ wk.scrollIntoView({behavior:"smooth",block:"nearest"}); }catch(e){} },30); } }
+  function toggle(e){ if(e) e.stopPropagation(); var open=wk.hidden; if(open) bygListe(); wk.hidden=!open; btn.setAttribute("aria-expanded",open); more.textContent=open?"Skjul ugen":"Se hele ugen"; var info=document.querySelector(".info"); if(open){ info.style.setProperty("--wk-h",(wk.offsetHeight+14)+"px"); } document.body.classList.toggle("week-open",open); if(open){ setTimeout(function(){ try{ card.scrollIntoView({behavior:"smooth",block:"end"}); }catch(e){} },280); } }
   if(card){ btn.addEventListener("click",toggle); card.addEventListener("click",function(e){ if(!wk.contains(e.target)) toggle(e); });
     document.addEventListener("click",function(e){ if(!card.contains(e.target)&&!wk.hidden) toggle(); });
     document.addEventListener("keydown",function(e){ if(e.key==="Escape"&&!wk.hidden) toggle(); }); }
